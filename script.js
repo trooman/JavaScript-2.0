@@ -147,36 +147,68 @@ document.querySelector('.btn-11').onclick = f11;
 // Создайте массив шахматную доску. Белые - 0, черные - 1. Напишите функцию, которая выводит данный массив в виде шахматной доски - блоки div в нужном порядке, закрашенные нужным цветом.
 function f12() {
   let out = document.querySelector('.out-12');
-  let result = '';
-  let arr = [0, 1];
+  // let result = '';
+  // let arr = [0, 1];
 
   let whiteSector = document.createElement('div');
   whiteSector.style.width = '32px';
   whiteSector.style.height = '32px';
   whiteSector.style.display = 'inline-block';
   whiteSector.style.background = 'tomato';
-  // let whiteScale = out.appendChild(whiteSector);
+  // whiteSector.style.display = 'none';
+  let whiteScale = out.appendChild(whiteSector);
 
   let blackSector = document.createElement('div');
   blackSector.style.width = '32px';
   blackSector.style.height = '32px';
   blackSector.style.display = 'inline-block';
   blackSector.style.background = 'black';
-  // let blackScale = out.appendChild(blackSector);
+  // blackSector.style.display = 'none';
+  let blackScale = out.appendChild(blackSector);
 
-  for (let i = 0; i < 8; i++) {
+  let arr = [whiteScale, blackScale];
 
-    result += '<br>';
-  }
-
-  out.innerHTML = result;
+  // for (let i = 0; i < 8; i++) {
+  //   for (let k = 0; k < 4; k++) {
+  //     blackScale.style.display = 'inline';
+  //     out.append(blackScale)
+  //   }
+  // }
 }
-document.querySelector('.btn-12').onclick = f12;
-
-
+f12();
 
 // task 13 --------------------
+// Создайте массив, который подходит под следующие условия:
+let b = [
+  [, 4],
+  [],
+  [],
+  [, , 5]
+];
+console.log(b[0][1]);
+console.log(b[3][2]);
 
 // task 14 --------------------
+// Создайте массив, который подходит под следующие условия:
+let c = [
+  [, 4],
+  [],
+  5
+];
+console.log(c[0][1]);
+console.log(c[2]);
 
 // task 15 --------------------
+// Создайте массив, который подходит под следующие условия:
+let d = [
+  [, 4],
+  [],
+  [, , , 5],
+  [],
+  [],
+  [],
+  [4, 5]
+];
+console.log(d[0][1]);
+console.log(d[2][3]);
+console.log(d[6]);
