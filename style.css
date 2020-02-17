@@ -16,10 +16,11 @@ button {
     cursor: pointer;
 }
 
-/* .field {
+.field {
     width: 256px;
     height: 256px;
     border: 1px solid black;
+    padding: 2px 1px 1px 1px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -28,11 +29,11 @@ button {
 .white {
     width: 32px;
     height: 32px;
-    background-color: #fff;
+    background-color: white;
 }
 
 .black {
     width: 32px;
     height: 32px;
     background-color: #000;
-} */
+}

@@ -146,34 +146,36 @@ document.querySelector('.btn-11').onclick = f11;
 // task 12 --------------------
 // Создайте массив шахматную доску. Белые - 0, черные - 1. Напишите функцию, которая выводит данный массив в виде шахматной доски - блоки div в нужном порядке, закрашенные нужным цветом.
 function f12() {
-  let out = document.querySelector('.out-12');
-  // let result = '';
-  // let arr = [0, 1];
-
-  let whiteSector = document.createElement('div');
-  whiteSector.style.width = '32px';
-  whiteSector.style.height = '32px';
-  whiteSector.style.display = 'inline-block';
-  whiteSector.style.background = 'tomato';
-  // whiteSector.style.display = 'none';
-  let whiteScale = out.appendChild(whiteSector);
-
-  let blackSector = document.createElement('div');
-  blackSector.style.width = '32px';
-  blackSector.style.height = '32px';
-  blackSector.style.display = 'inline-block';
-  blackSector.style.background = 'black';
-  // blackSector.style.display = 'none';
-  let blackScale = out.appendChild(blackSector);
-
-  let arr = [whiteScale, blackScale];
-
-  // for (let i = 0; i < 8; i++) {
-  //   for (let k = 0; k < 4; k++) {
-  //     blackScale.style.display = 'inline';
-  //     out.append(blackScale)
-  //   }
-  // }
+  let arr = [];
+  for (let i = 0; i < 8; i++) {
+    arr[i] = [];
+    for (let k = 0; k < 4; k++) {
+      arr[i].push(0);
+      arr[i].push(1);
+    }
+    if (arr[i] == arr[1] || 
+        arr[i] == arr[3] || 
+        arr[i] == arr[5] || 
+        arr[i] == arr[7]
+        ) {
+      arr[i].reverse();
+    }
+  }
+  
+  let field = document.querySelector('.field');
+  for (let i = 0; i < arr.length; i++) {
+    for (let k = 0; k < arr[i].length; k++) {
+      if (arr[i][k] == 0) {
+        let white = document.createElement('div')
+        white.classList.add('white');
+        field.append(white);
+      } else {
+        let black = document.createElement('div');
+        black.classList.add('black');
+        field.append(black);
+      }
+    }
+  }
 }
 f12();
 
@@ -212,3 +214,39 @@ let d = [
 console.log(d[0][1]);
 console.log(d[2][3]);
 console.log(d[6]);
+
+// task 16 --------------------
+// Создайте массив, который подходит под следующие условия:
+let e = [
+  [, 4],
+  [],
+  [, , ,5],
+  [],
+  [],
+  [],
+  [
+    [, 6]
+  ]
+];
+console.log(e[0][1]);
+console.log(e[2][3]);
+console.log(e[6][0][1]);
+// task 17 --------------------
+// Создайте массив, который подходит под следующие условия:
+// let f = [
+//   [
+//     [, [, , ,]]
+//   ]
+// ];
+// console.log(f[0][1][3]);
+
+// task 18 --------------------
+// Создайте массив, который подходит под следующие условия:
+
+//Task 19
+//Выведите на страницу сумму элементов массива a(только чисел).
+
+//Task 20
+//Создайте массив, который эмулирует доску для крестиков - ноликов, 
+//напишите все возможные выиграшные комбинации, 
+//т.е.a[0][0], a[0][1], a[0][2] - занята первая линия, и т.д.
