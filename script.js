@@ -125,23 +125,22 @@ document.querySelector('.btn-10').onclick = f10;
 
 // task 11 --------------------
 // Создайте массив шахматную доску.Белые - 0, черные - 1. Выведите на страницу.
-function f11() {
-  let out = document.querySelector('.out-11');
-  let a = [0, 1];
-  let result = '';
+  let arr = [];
   for (let i = 0; i < 8; i++) {
+    arr[i] = [];
     for (let k = 0; k < 4; k++) {
-      if (i == 0 || i % 2 == 0) {
-        result += a[0] + ' ' + a[1] + ' ';
-      } else {
-        result += a[1] + ' ' + a[0] + ' ';
-      }
+      arr[i].push(0);
+      arr[i].push(1);
     }
-    result += '<br>';
+    if (arr[i] == arr[1] ||
+      arr[i] == arr[3] ||
+      arr[i] == arr[5] ||
+      arr[i] == arr[7]
+    ) {
+      arr[i].reverse();
+    }
   }
-  out.innerHTML = result;
-}
-document.querySelector('.btn-11').onclick = f11;
+  console.log(arr); 
 
 // task 12 --------------------
 // Создайте массив шахматную доску. Белые - 0, черные - 1. Напишите функцию, которая выводит данный массив в виде шахматной доски - блоки div в нужном порядке, закрашенные нужным цветом.
@@ -233,18 +232,42 @@ console.log(e[2][3]);
 console.log(e[6][0][1]);
 // task 17 --------------------
 // Создайте массив, который подходит под следующие условия:
-// let f = [
-//   [
-//     [, [, , ,]]
-//   ]
-// ];
-// console.log(f[0][1][3]);
+let f = [
+  [
+    [],
+    [, , , 4]
+  ],
+  [],
+  [
+    [],
+    [, 5]
+  ],
+  [],
+  [],
+  [],
+  [
+    [, 6]
+  ]
+];
+console.log(f[0][1][3]);
+console.log(f[2][1][1]);
+console.log(f[6][0][1]);
 
 // task 18 --------------------
 // Создайте массив, который подходит под следующие условия:
 
 //Task 19
 //Выведите на страницу сумму элементов массива a(только чисел).
+let out19 = document.querySelector('.out-19');
+let result19 = 0;
+for (let i = 0; i < a.length; i++) {
+  for (let k = 0; k < a[i].length; k++) {
+    if (typeof a[i][k] == 'number') {
+      result19 += a[i][k];
+    }
+  }
+}
+out19.innerHTML = result19; 
 
 //Task 20
 //Создайте массив, который эмулирует доску для крестиков - ноликов, 
